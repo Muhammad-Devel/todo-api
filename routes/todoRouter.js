@@ -1,4 +1,5 @@
 const express = require("express");
+const { addTodo } = require("../controller/todoController");
 
 const router = express.Router();
 
@@ -27,7 +28,7 @@ router.post("/todos", (req, res) => {
     task: req.body.task,
     completed: req.body.completed || false,
   };
-  todos.push(newTodo);
+  addTodo(newTodo);
   res.status(201).json(newTodo);
 });
 
