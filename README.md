@@ -23,3 +23,17 @@ To run this project locally, follow these steps:
 
    ```bash
    git clone https://github.com/your-username/todo-api.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd todo-api
+   
+3. Install dependencies:
+   ```bash
+   npm install
+
+4. Start the server
+   ```bash
+   npm start
+
+Buy default, the server runs on http://localhost:5001
