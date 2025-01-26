@@ -39,24 +39,11 @@ To run this project locally, follow these steps:
 Buy default, the server runs on http://localhost:5001
 
 ## API Endpoints
+
 Here are the available API endpoints for managing todos:
-### 1.Add new Todo
-- #### Endpoint:
-   ```method
-   POST /api/todos
-
-- #### Description:
-   Add a new todo to the list
-
-- #### Request Body:
-  ```json
-     {
-     "task": "Learn Node.js",
-     "completed": false
-     }
-
-### 2.Get All Todos
-
-- ### Endpoint:
-   ```method
-   GET /api/todos
+| Method | Endpoint | Ddescription |
+| -------- | -------- | -------- |
+| GET  | Data 2   | Data 3   |   Get all todo   |
+| POST   | Data B   | Data C   |   Add new todo   |
+| PUT   |  /api/todos/:id    |  Update an existing todo   |
+|  DELETE  |  /api/todos/:id   |  Delete a todo  |
