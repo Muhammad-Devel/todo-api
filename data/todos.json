@@ -1,7 +1,31 @@
 [
   {
+    "id": 1,
+    "task": "Learn JavaScript",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "task": "Learn Node.js",
+    "completed": false
+  },
+  {
     "id": 3,
     "task": "Salom todos",
+    "completed": false
+  },
+  {
+    "task": "Salom todos",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "task": "Salom todos3",
+    "completed": false
+  },
+  {
+    "id": 6,
+    "task": "Salom todos4",
     "completed": false
   }
 ]

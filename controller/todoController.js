@@ -20,6 +20,20 @@ exports.getAllTodos = (req, res) => {
   });
 };
 
+// Get a single todo by id
+exports.getTodoById = (req, res) => {
+  ensureDirectoryExists(todosFilePath);
+
+  fs.readFile(todosFilePath, (err, data) => {
+    if (err) throw err;
+
+    const todos = JSON.parse(data);
+    const todo = todos.find((t) => t.id === parseInt(req.params.id));
+    if (!todo) return res.status(404).send("Todo not found");
+
+    res.json(todo);
+  });
+};
 // Add a new todo
 exports.addTodo = (req, res) => {
   const newTodo = {

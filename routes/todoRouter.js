@@ -1,36 +1,20 @@
 const express = require("express");
-const { addTodo } = require("../controller/todoController");
+const {
+  addTodo,
+  getAllTodos,
+  getTodoById,
+} = require("../controller/todoController");
 
 const router = express.Router();
 
-// Mock data
-let todos = [
-  { id: 1, task: "Learn JavaScript", completed: false },
-  { id: 2, task: "Learn Node.js", completed: false },
-];
-
 // Get all todos
-router.get("/todos", (req, res) => {
-  res.json(todos);
-});
+router.get("/todos", getAllTodos);
 
 // Get a single todo by id
-router.get("/todos/:id", (req, res) => {
-  const todo = todos.find((t) => t.id === parseInt(req.params.id));
-  if (!todo) return res.status(404).send("Todo not found");
-  res.json(todo);
-});
+router.get("/todos/:id", getTodoById);
 
 // Create a new todo
-router.post("/todos", (req, res) => {
-  const newTodo = {
-    id: todos.length + 1,
-    task: req.body.task,
-    completed: req.body.completed || false,
-  };
-  addTodo(newTodo);
-  res.status(201).json(newTodo);
-});
+router.post("/todos", addTodo);
 
 // Update a todo by id
 router.put("/todos/:id", (req, res) => {
