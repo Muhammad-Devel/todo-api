@@ -10,7 +10,22 @@ const ensureDirectoryExists = (filePath) => {
   }
 };
 
-exports.addTodo = (todo) => {
+// Get all todos
+exports.getAllTodos = (req, res) => {
+  ensureDirectoryExists(todosFilePath);
+
+  fs.readFile(todosFilePath, (err, data) => {
+    if (err) throw err;
+    res.json(JSON.parse(data));
+  });
+};
+
+// Add a new todo
+exports.addTodo = (req, res) => {
+  const newTodo = {
+    task: req.body.task,
+    completed: req.body.completed || false,
+  };
   ensureDirectoryExists(todosFilePath);
 
   // Check if file exists
@@ -29,12 +44,13 @@ exports.addTodo = (todo) => {
     let todos = JSON.parse(data);
 
     // Add the new todo to the array
-    todos.push(todo);
+    todos.push({ id: todos.length + 1, ...newTodo });
 
     // Write the updated todos back to the file
     fs.writeFile(todosFilePath, JSON.stringify(todos, null, 2), (err) => {
       if (err) throw err;
       console.log("Todo added successfully");
+      res.status(201).json(newTodo);
     });
   });
 };
