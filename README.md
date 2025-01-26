@@ -51,14 +51,14 @@ POST /api/todos
 - #### Request Body:
 
   ```json
-  {
-  "task": "Learn Node.js",
-  "completed": false
-  }
+     {
+     "task": "Learn Node.js",
+     "completed": false
+     }
 
 ### 2.Get All Todos
 
 - ### Endpoint:
 
-```method
-GET /api/todos
+   ```method
+   GET /api/todos
