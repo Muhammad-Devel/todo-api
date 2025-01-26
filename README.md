@@ -57,7 +57,7 @@ Here are the available API endpoints for managing todos:
 ## 2. Get all Todos
 - #### Endpoint:
 ```method
-GET /todos
+   GET /todos
 
 - #### Description:
 Retrieves all todos.
