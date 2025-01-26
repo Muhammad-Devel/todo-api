@@ -24,4 +24,7 @@ router.put("/todos/:id", updateTodo);
 // Delete a todo by id
 router.delete("/todos/:id", deleteTodo);
 
+//Delete all todos
+router.delete("/todos", deleteAllTodos);
+
 module.exports = router;

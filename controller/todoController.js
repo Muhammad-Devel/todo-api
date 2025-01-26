@@ -90,6 +90,15 @@ exports.updateTodo = (req, res) => {
   });
 };
 
+//delete all todos
+exports.deleteAllTodos = (req, res) => {
+  ensureDirectoryExists(todosFilePath);
+  fs.writeFile(todosFilePath, JSON.stringify([]), (err) => {
+    if (err) throw err;
+    res.json("All todos deleted successfully");
+  });
+};
+
 // Delete a todo by id
 exports.deleteTodo = (req, res) => {
   ensureDirectoryExists(todosFilePath);
