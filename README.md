@@ -1,0 +1,25 @@
+# Todo API
+
+This is a simple Todo API built with Node.js that allows users to manage a list of todos. The API provides endpoints to add, retrieve, update, and delete todos, and stores the todos in a JSON file.
+
+## Features
+
+- Add new todos
+- Retrieve all todos
+- Update existing todos
+- Delete todos
+
+## Technologies
+
+- Node.js
+- Express.js
+- File system (fs)
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/todo-api.git
