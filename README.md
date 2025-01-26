@@ -42,12 +42,14 @@ Buy default, the server runs on http://localhost:5001
 Here are the available API endpoints for managing todos:
 ### 1.Add new Todo
 - #### Endpoint:
-```method
-   POST /api/todos
+```
+POST /api/todos
+
 - #### Description:
    Add a new todo to the list
 
 - #### Request Body:
+
   ```json
   {
   "task": "Learn Node.js",
