@@ -46,9 +46,36 @@ Here are the available API endpoints for managing todos:
    POST /api/todos
 - #### Description:
    Add a new todo to the list
+
 - #### Request Body:
   ```json
   {
   "task": "Learn Node.js",
   "completed": false
   }
+  
+## 2. Get all Todos
+- #### Endpoint:
+```method
+GET /todos
+
+- #### Description:
+Retrieves all todos.
+
+- ### Response:
+List of todos.
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Learn Node.js",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "title": "Build an API",
+    "completed": true
+  }
+]
+
