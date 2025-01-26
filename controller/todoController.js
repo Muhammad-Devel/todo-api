@@ -68,3 +68,24 @@ exports.addTodo = (req, res) => {
     });
   });
 };
+
+// Update a todo by id
+exports.updateTodo = (req, res) => {
+  ensureDirectoryExists(todosFilePath);
+
+  fs.readFile(todosFilePath, (err, data) => {
+    if (err) throw err;
+
+    const todos = JSON.parse(data);
+    const todo = todos.find((t) => t.id === parseInt(req.params.id));
+    if (!todo) return res.status(404).send("Todo not found");
+
+    todo.task = req.body.task;
+    todo.completed = req.body.completed || false;
+
+    fs.writeFile(todosFilePath, JSON.stringify(todos, null, 2), (err) => {
+      if (err) throw err;
+      res.json(todo);
+    });
+  });
+};

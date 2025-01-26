@@ -3,6 +3,7 @@ const {
   addTodo,
   getAllTodos,
   getTodoById,
+  updateTodo,
 } = require("../controller/todoController");
 
 const router = express.Router();
@@ -17,14 +18,7 @@ router.get("/todos/:id", getTodoById);
 router.post("/todos", addTodo);
 
 // Update a todo by id
-router.put("/todos/:id", (req, res) => {
-  const todo = todos.find((t) => t.id === parseInt(req.params.id));
-  if (!todo) return res.status(404).send("Todo not found");
-
-  todo.task = req.body.task;
-  todo.completed = req.body.completed;
-  res.json(todo);
-});
+router.put("/todos/:id", updateTodo);
 
 // Delete a todo by id
 router.delete("/todos/:id", (req, res) => {
