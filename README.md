@@ -41,7 +41,7 @@ Buy default, the server runs on http://localhost:5001
 ## API Endpoints
 
 Here are the available API endpoints for managing todos:
-| Method | Endpoint | Ddescription |
+| Method | Endpoint | Description |
 | -------- | -------- | -------- |
 | GET  | /api/todos  |   Get all todo   |
 | POST   | /api/todos   |   Add new todo   |
