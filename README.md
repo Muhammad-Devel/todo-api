@@ -53,26 +53,11 @@ Here are the available API endpoints for managing todos:
   "task": "Learn Node.js",
   "completed": false
   }
-  
-## 2. Get all Todos
-- #### Endpoint:
+### 2.Get All Todos
+- ### Endpoint:
 ```method
-   GET /todos
+GET /api/todos
 
-- #### Description:
-Retrieves all todos.
-
-- ### Response:
-List of todos.
-
-```json
-[
-  {
-    "id": 1,
-    "title": "Learn Node.js",
-    "completed": false
-  },
-  {
     "id": 2,
     "title": "Build an API",
     "completed": true
