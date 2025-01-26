@@ -1,26 +1,17 @@
 [
   {
     "id": 1,
-    "task": "Learn JavaScript",
+    "title": "Buy groceries",
     "completed": false
+  },
+  {
+    "id": 2,
+    "title": "Read a book",
+    "completed": true
   },
   {
     "id": 3,
-    "task": "Salom todos",
-    "completed": false
-  },
-  {
-    "task": "Salom todos",
-    "completed": false
-  },
-  {
-    "id": 5,
-    "task": "salom Todos3-1",
-    "completed": false
-  },
-  {
-    "id": 6,
-    "task": "salom Todos4-1",
+    "title": "Write code",
     "completed": false
   }
 ]
