@@ -21,12 +21,6 @@ router.post("/todos", addTodo);
 router.put("/todos/:id", updateTodo);
 
 // Delete a todo by id
-router.delete("/todos/:id", (req, res) => {
-  const todoIndex = todos.findIndex((t) => t.id === parseInt(req.params.id));
-  if (todoIndex === -1) return res.status(404).send("Todo not found");
-
-  todos.splice(todoIndex, 1);
-  res.status(204).send();
-});
+router.delete("/todos/:id", deleteTodo);
 
 module.exports = router;

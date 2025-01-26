@@ -64,7 +64,7 @@ exports.addTodo = (req, res) => {
     fs.writeFile(todosFilePath, JSON.stringify(todos, null, 2), (err) => {
       if (err) throw err;
       console.log("Todo added successfully");
-      res.status(201).json(newTodo);
+      res.status(201).json("Todo added successfully");
     });
   });
 };
@@ -78,14 +78,34 @@ exports.updateTodo = (req, res) => {
 
     const todos = JSON.parse(data);
     const todo = todos.find((t) => t.id === parseInt(req.params.id));
-    if (!todo) return res.status(404).send("Todo not found");
+    if (!todo) return res.status(404).json("Todo not found");
 
     todo.task = req.body.task;
     todo.completed = req.body.completed || false;
 
     fs.writeFile(todosFilePath, JSON.stringify(todos, null, 2), (err) => {
       if (err) throw err;
-      res.json(todo);
+      res.json("todo updated successfully");
+    });
+  });
+};
+
+// Delete a todo by id
+exports.deleteTodo = (req, res) => {
+  ensureDirectoryExists(todosFilePath);
+
+  fs.readFile(todosFilePath, (err, data) => {
+    if (err) throw err;
+
+    let todos = JSON.parse(data);
+    const todo = todos.find((t) => t.id === parseInt(req.params.id));
+    if (!todo) return res.status(404).json("Todo not found");
+
+    todos = todos.filter((t) => t.id !== parseInt(req.params.id));
+
+    fs.writeFile(todosFilePath, JSON.stringify(todos, null, 2), (err) => {
+      if (err) throw err;
+      res.json("Todo deleted successfully");
     });
   });
 };
