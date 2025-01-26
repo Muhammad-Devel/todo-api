@@ -55,14 +55,10 @@ POST /api/todos
   "task": "Learn Node.js",
   "completed": false
   }
+
 ### 2.Get All Todos
+
 - ### Endpoint:
+
 ```method
 GET /api/todos
-
-    "id": 2,
-    "title": "Build an API",
-    "completed": true
-  }
-]
-
