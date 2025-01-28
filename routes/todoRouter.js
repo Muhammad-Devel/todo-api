@@ -5,6 +5,7 @@ const {
   getTodoById,
   updateTodo,
   deleteTodo,
+  deleteAllTodo,
 } = require("../controller/todoController");
 
 const router = express.Router();
