@@ -91,7 +91,7 @@ exports.updateTodo = (req, res) => {
 };
 
 //delete all todos
-exports.deleteAllTodos = (req, res) => {
+exports.deleteAllTodo = (req, res) => {
   ensureDirectoryExists(todosFilePath);
   fs.writeFile(todosFilePath, JSON.stringify([]), (err) => {
     if (err) throw err;
